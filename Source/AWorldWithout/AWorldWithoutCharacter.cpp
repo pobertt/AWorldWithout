@@ -60,6 +60,9 @@ void AAWorldWithoutCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AAWorldWithoutCharacter::Look);
+
+		//Interact (i added this)
+		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &AAWorldWithoutCharacter::Interact);
 	}
 	else
 	{
@@ -92,4 +95,9 @@ void AAWorldWithoutCharacter::Look(const FInputActionValue& Value)
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void AAWorldWithoutCharacter::Interact()
+{
+
 }
