@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "FilePicker.h"
 #include "AWorldWithoutCharacter.generated.h"
 
 class UInputComponent;
@@ -40,9 +41,14 @@ class AAWorldWithoutCharacter : public ACharacter
 	/** Interact Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* InteractAction;
+
 	
+
 public:
 	AAWorldWithoutCharacter();
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	AFilePicker* FilePickerRef;
 
 protected:
 	virtual void BeginPlay();

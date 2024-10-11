@@ -8,6 +8,7 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Kismet/GameplayStatics.h"
 #include "InputActionValue.h"
 #include "Engine/LocalPlayer.h"
 
@@ -42,6 +43,12 @@ void AAWorldWithoutCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+
+	//Creating file picker reference
+	FilePickerRef = Cast<AFilePicker>(UGameplayStatics::GetActorOfClass(GetWorld(), AFilePicker::StaticClass()));
+	if (FilePickerRef == nullptr) {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "File Picker Not Found");
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
