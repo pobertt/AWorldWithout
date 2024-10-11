@@ -29,6 +29,7 @@ void AFilePicker::PrintData(const FString& File)
 	//Print the contents
 	for (int32 i = 0; i < LoadedText.Num(); i++)
 	{
+		GLog->Log(*File);
 		GLog->Log(LoadedText[i]);
 	}
 }
