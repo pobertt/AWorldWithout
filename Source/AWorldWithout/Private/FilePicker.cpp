@@ -33,3 +33,9 @@ void AFilePicker::PrintData(const FString& File)
 		GLog->Log(LoadedText[i]);
 	}
 }
+
+void AFilePicker::WriteStringToFile(FString FilePath, FString String) 
+{
+	FFileHelper::SaveStringToFile(String, *FilePath);
+}
+

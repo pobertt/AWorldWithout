@@ -23,4 +23,6 @@ class AWORLDWITHOUT_API AFilePicker : public AInfo
 	UFUNCTION(BlueprintCallable, Category = "FilePicker")
 	void PrintData(const FString& File);
 
+	UFUNCTION(BlueprintCallable, Category = "FilePicker")
+	static void WriteStringToFile(FString FilePath, FString String);
 };
